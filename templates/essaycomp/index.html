@@ -1,0 +1,334 @@
+{% extends 'base.html' %}
+{% block body %}
+{%load static%}
+<!-- SLIDER SECTION------>
+<div class="slider-container rev_slider_wrapper" style="height: 800px;">
+    <div id="revolutionSlider" class="slider rev_slider" data-version="5.4.8"
+    data-plugin-revolution-slider data-plugin-options="{'delay': 9000, 'gridwidth': 1170, 'gridheight': 700,
+     'responsiveLevels': [4096,1200,992,500], 'navigation' : {'arrows': { 'enable': false }, 'bullets': {'enable': true, 'style': 'bullets-style-1',
+      'h_align': 'center', 'v_align': 'bottom', 'space': 7, 'v_offset': 70, 'h_offset': 0}}}">
+        <ul>
+             <li data-transition="fade" class="slide-overlay slide-overlay-level-7">
+                    <img src="{% static 'img/slides/slide-corporate-4-1.jpg'%}"
+                    alt=""
+                    data-bgposition="center center"
+                    data-bgfit="cover"
+                    data-bgrepeat="no-repeat"
+                    class="rev-slidebg">
+
+                <div class="tp-caption"
+                    data-x="center" data-hoffset="['-150','-150','-150','-240']"
+                    data-y="center" data-voffset="['-110','-110','-110','-135']"
+                    data-start="1000"
+                    data-transform_in="x:[-300%];opacity:0;s:500;"
+                    data-transform_idle="opacity:0.2;s:500;"><img src="{% static  'img/slides/slide-title-border.png'%}" alt=""></div>
+
+                <div class="tp-caption text-color-light font-weight-normal"
+                    data-x="center"
+                    data-y="center" data-voffset="['-110','-110','-110','-135']"
+                    data-start="700"
+                    data-fontsize="['22','22','22','40']"
+                    data-lineheight="['25','25','25','45']"
+                    data-transform_in="y:[-50%];opacity:0;s:500;">NEED A CUSTOM</div>
+
+                <div class="tp-caption"
+                    data-x="center" data-hoffset="['150','150','150','240']"
+                    data-y="center" data-voffset="['-110','-110','-110','-135']"
+                    data-start="1000"
+                    data-transform_in="x:[300%];opacity:0;s:500;"
+                    data-transform_idle="opacity:0.2;s:500;"><img src="{% static  'img/slides/slide-title-border.png'%}" alt=""></div>
+
+                <h1 class="tp-caption font-weight-extra-bold text-color-light negative-ls-2"
+                    data-frames='[{"delay":1000,"speed":2000,"frame":"0","from":"sX:1.5;opacity:0;fb:20px;","to":"o:1;fb:0;","ease":"Power3.easeInOut"},{
+                        "delay":"wait","speed":300,"frame":"999","to":"opacity:0;fb:0;","ease":"Power3.easeInOut"}]'
+                    data-x="center"
+                    data-y="center" data-voffset="['-60','-60','-60','-85']"
+                    data-fontsize="['50','50','50','90']"
+                    data-lineheight="['55','55','55','95']">WRITTEN PAPER</h1>
+
+                <div class="tp-caption font-weight-light text-center"
+                    data-frames='[{"from":"opacity:0;","speed":300,"to":"o:1;","delay":2000,"split":"chars","splitdelay":0.05,"ease":"Power2.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'
+                    data-x="center"
+                    data-y="center" data-voffset="['0','0','0','-25']"
+                    data-fontsize="['18','18','18','50']"
+                    data-lineheight="['29','29','29','40']"
+                    style="color: #b5b5b5;">We have the best <strong class="text-color-light">tutors</strong>
+                     for your business and academic assignments including essay and research papers.</div>
+
+                <a class="tp-caption btn btn-light-2 btn-outline btn-rounded font-weight-semibold"
+                    data-frames='[{"delay":4500,"speed":2000,"frame":"0","from":"opacity:0;y:50%;","to":"o:1;y:0;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;fb:0;","ease":"Power3.easeInOut"}]'
+                    data-hash
+                    data-hash-offset="85"
+                    href="{% url 'order' %}"
+                    data-x="center" data-hoffset="0"
+                    data-y="center" data-voffset="['100','100','100','75']"
+                    data-whitespace="nowrap"
+                    data-fontsize="['15','15','15','33']"
+                    data-paddingtop="['15','15','15','40']"
+                    data-paddingright="['45','45','45','110']"
+                    data-paddingbottom="['15','15','15','40']"
+                    data-paddingleft="['45','45','45','110']">GET A TUTOR NOW!</a>
+
+            </li>
+            <li data-transition="fade" class="slide-overlay slide-overlay-level-7">
+                <img src="{% static  'img/slides/slide-corporate-4-2.jpg'%}"
+                    alt=""
+                    data-bgposition="center center"
+                    data-bgfit="cover"
+                    data-bgrepeat="no-repeat"
+                    class="rev-slidebg">
+
+                <div class="tp-caption"
+                    data-x="center" data-hoffset="['-115','-115','-115','-185']"
+                    data-y="center" data-voffset="['-110','-110','-110','-135']"
+                    data-start="1000"
+                    data-transform_in="x:[-300%];opacity:0;s:500;"
+                    data-transform_idle="opacity:0.2;s:500;"><img src="{% static  'img/slides/slide-title-border.png'%}" alt=""></div>
+
+                <div class="tp-caption text-color-light font-weight-normal"
+                    data-x="center"
+                    data-y="center" data-voffset="['-110','-110','-110','-135']"
+                    data-start="700"
+                    data-fontsize="['22','22','22','40']"
+                    data-lineheight="['25','25','25','45']"
+                    data-transform_in="y:[-50%];opacity:0;s:500;">WE ARE </div>
+
+                <div class="tp-caption"
+                    data-x="center" data-hoffset="['115','115','115','185']"
+                    data-y="center" data-voffset="['-110','-110','-110','-135']"
+                    data-start="1000"
+                    data-transform_in="x:[300%];opacity:0;s:500;"
+                    data-transform_idle="opacity:0.2;s:500;"><img src="{% static  'img/slides/slide-title-border.png'%}" alt=""></div>
+
+                <div class="tp-caption font-weight-extra-bold text-color-light negative-ls-2"
+                    data-frames='[{"delay":1000,"speed":2000,"frame":"0","from":"sX:1.5;opacity:0;fb:20px;","to":"o:1;fb:0;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;fb:0;","ease":"Power3.easeInOut"}]'
+                    data-x="center"
+                    data-y="center" data-voffset="['-60','-60','-60','-85']"
+                    data-fontsize="['50','50','50','90']"
+                    data-lineheight="['55','55','55','95']">PROFESSIONAL TUTORS</div>
+
+                <div class="tp-caption font-weight-light text-center"
+                    data-frames='[{"from":"opacity:0;","speed":300,"to":"o:1;","delay":2000,"split":"chars","splitdelay":0.05,"ease":"Power2.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'
+                    data-x="center"
+                    data-y="center" data-voffset="['-10','-10','-10','-25']"
+                    data-fontsize="['18','18','18','50']"
+                    data-lineheight="['29','29','29','40']"
+                    style="color: #b5b5b5;">Who's sole purpose is helping you score better and meet your deadlines.</div>
+
+                <a class="tp-caption btn btn-light-2 btn-outline btn-rounded font-weight-semibold"
+                    data-frames='[{"delay":2500,"speed":2000,"frame":"0","from":"opacity:0;y:50%;","to":"o:1;y:0;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;fb:0;","ease":"Power3.easeInOut"}]'
+                    data-hash
+                    data-hash-offset="85"
+                    href="{% url 'order' %}"
+                    data-x="center" data-hoffset="0"
+                    data-y="center" data-voffset="['70','70','70','45']"
+                    data-whitespace="nowrap"
+                    data-fontsize="['15','15','15','33']"
+                    data-paddingtop="['15','15','15','40']"
+                    data-paddingright="['45','45','45','110']"
+                    data-paddingbottom="['15','15','15','40']"
+                    data-paddingleft="['45','45','45','110']">GET A TUTOR NOW!</a>
+
+            </li>
+        </ul>
+    </div>
+</div>
+
+<!---ABOUT SECTION--->
+<div class="container  my-5 py-3">
+    <div class="row align-items-center mb-5">
+        <div class="col-lg-6 pr-5 appear-animation animated fadeInRightShorter appear-animation-visible" data-appear-animation="fadeInRightShorter" style="animation-delay: 100ms;">
+            <h2 class="font-weight-normal text-6 mb-4"><strong class="font-weight-extra-bold">Who </strong>We Are</h2>
+            <p class="lead pr-2 mb-4">Welcome to EssaycompTutors a professional e-writing service plartform that offers you custom writing solution.</p>
+            <p class="mb-4">Do you feel juggling work, studying, exams, and a personal life can sometimes feel a little bit overwhelming? You’re not alone, a lot of students do. College life these days is demanding and requires a lot of time, which you sometimes might not have. That’s where Edusson can help you. We are a dedicated essay writing service that can help you put together a top-quality essay.</p>
+            <a class="btn btn-light text-uppercase text-primary text-1 py-2 px-4 mb-1" href="{% url 'order' %}">
+                <strong>Order Now</strong><i class="fas fa-chevron-right text-2 pl-2"></i>
+            </a>
+            <a class="btn btn-primary text-uppercase  text-1 py-2 px-4 mb-1" href="{% url 'works' %}">
+                <strong>How it Works</strong><i class="fas fa-chevron-right text-2 pl-2"></i>
+            </a>
+        </div>
+        <div class="col-sm-8 col-md-6 col-lg-4 offset-sm-4 offset-md-4 offset-lg-2 mt-sm-5" style="top: 1.7rem;">
+                <img src="{% static  'img/generic/generic-corporate-3-1.jpg'%}" class="img-fluid position-absolute d-none d-sm-block appear-animation animated expandIn appear-animation-visible" data-appear-animation="expandIn" data-appear-animation-delay="300" style="top: 10%; left: -50%; animation-delay: 300ms;" alt="">
+                <img src="{% static  'img/generic/generic-corporate-3-2.jpg'%}" class="img-fluid position-absolute d-none d-sm-block appear-animation animated expandIn appear-animation-visible" data-appear-animation="expandIn" style="top: -33%; left: -29%; animation-delay: 100ms;" alt="">
+                <img src="{% static  'img/generic/generic-corporate-3-3.jpg'%}" class="img-fluid position-relative appear-animation mb-2 animated expandIn appear-animation-visible" data-appear-animation="expandIn" data-appear-animation-delay="600" alt="" style="animation-delay: 600ms;">
+            </div>
+    </div>
+</div>
+<section class="section section-default border-0 my-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 text-center offset-lg-1">
+                        <h3 class="font-weight-bold text-9 mb-2 appear-animation animated fadeInUpShorter appear-animation-visible"
+                        data-appear-animation="fadeInUpShorter" data-appear-animation-duration="750" data-plugin-options="{'accY': -200}"
+                         style="animation-delay: 100ms;text-transform:capitalize">How it works</h3>
+            </div>
+            <div class="col mt-1 mb-1">
+
+                <div class="row process my-12">
+                    <div class="process-step col-lg-3 mb-5 mb-lg-4 appear-animation animated fadeInUpShorter appear-animation-visible"
+                    data-appear-animation="fadeInUpShorter" data-appear-animation-delay="200" style="animation-delay: 200ms;">
+                        <div class="process-step-circle">
+                            <strong class="process-step-circle-content"><i class="icons icon-paper-clip text-5 text-primary"></i></strong>
+                        </div>
+                        <div class="process-step-content px-4">
+                            <h4 class="mb-1 text-5 font-weight-bold mb-2">First Step</h4>
+                            <p class="mb-0">Submit your assignment to us.</p>
+                        </div>
+                    </div>
+                    <div class="process-step col-lg-3 mb-5 mb-lg-4 appear-animation animated fadeInUpShorter appear-animation-visible"
+                    data-appear-animation="fadeInUpShorter" data-appear-animation-delay="200" style="animation-delay: 200ms;">
+                        <div class="process-step-circle">
+                            <strong class="process-step-circle-content"><i class="icons icon-credit-card text-5 text-primary"></i></strong>
+                        </div>
+                        <div class="process-step-content px-4">
+                            <h4 class="mb-1 text-5 font-weight-bold mb-2">Second Step</h4>
+                            <p class="mb-0">Make payment.</p>
+                        </div>
+                    </div>
+                    <div class="process-step col-lg-3 mb-5 mb-lg-4 appear-animation animated fadeInUpShorter appear-animation-visible" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="400" style="animation-delay: 400ms;">
+                        <div class="process-step-circle">
+                            <strong class="process-step-circle-content"><i class="icons icon-user text-5 text-primary"></i></strong>
+                        </div>
+                        <div class="process-step-content px-3">
+                            <h4 class="mb-1 text-5 font-weight-bold mb-2">Third Step</h4>
+                            <p class="mb-0">A tutor is assigned.</p>
+                        </div>
+                    </div>
+                    <div class="process-step col-lg-3 mb-5 mb-lg-4 appear-animation animated fadeInUpShorter appear-animation-visible" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="600" style="animation-delay: 600ms;">
+                        <div class="process-step-circle">
+                            <strong class="process-step-circle-content"><i class="icons icon-envelope-open text-5 text-primary"></i></strong>
+                        </div>
+                        <div class="process-step-content px-3">
+                            <h4 class="mb-1 text-5 font-weight-bold mb-2">Fourth Step</h4>
+                            <p class="mb-0">Completed work sent to your email.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="container my-5 py-3" id="main">
+    <div class="col-lg-10 text-center offset-lg-1">
+                <h3 class="font-weight-bold text-9 mb-0 appear-animation animated fadeInUpShorter appear-animation-visible"
+                data-appear-animation="fadeInUpShorter" data-appear-animation-duration="750" data-plugin-options="{'accY': -200}"
+                 style="animation-delay: 100ms;text-transform:capitalize">We Garantee</h3>
+    </div>
+    <div class="row pt-4">
+        <div class="col-lg-4 appear-animation" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="200">
+            <div class="feature-box feature-box-style-2">
+                <div class="feature-box-icon">
+                     <i class='fas fa-dollar-sign' style='font-size:36px;color:rgb(24, 178, 224)'></i>>
+                </div>
+                <div class="feature-box-info">
+                    <h4 class="font-weight-bold mb-2">Affordable Prices</h4>
+                    <p class="mb-4">We offer plagiarism free high quality papers at Affordable prices </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 appear-animation" data-appear-animation="fadeIn">
+            <div class="feature-box feature-box-style-2">
+                <div class="feature-box-icon">
+                    <i class='fas fa-book-reader' style='font-size:36px;color:rgb(24, 178, 224)'></i>
+                </div>
+                <div class="feature-box-info">
+                    <h4 class="font-weight-bold mb-2">Unlimited Revisions</h4>
+                    <p class="mb-4"> Free unlimited revisions is offered to all our assignments upto your satisfaction.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 appear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="200">
+            <div class="feature-box feature-box-style-2">
+                <div class="feature-box-icon">
+                    <i class='fas fa-edit' style='font-size:36px;color:rgb(24, 178, 224)'></i>
+                </div>
+                <div class="feature-box-info">
+                    <h4 class="font-weight-bold mb-2">100% Original</h4>
+                    <p class="mb-4">All our papers are written from scratch. Which guarantees low plagiarism.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-lg-3">
+        <div class="col-lg-4">
+            <div class="feature-box feature-box-style-2 appear-animation" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="300">
+                <div class="feature-box-icon">
+                    <i class='fas fa-shipping-fast' style='font-size:36px;color:rgb(24, 178, 224)'></i>
+                </div>
+                <div class="feature-box-info">
+                    <h4 class="font-weight-bold mb-2">Fast Delivery</h4>
+                    <p class="mb-4">We aim at ensuring that your paper is delivered on time whatever your deadline is.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="feature-box feature-box-style-2 appear-animation" data-appear-animation="fadeIn" data-appear-animation-delay="100">
+                <div class="feature-box-icon">
+                    <i class='fas fa-hands-helping' style='font-size:36px;color:rgb(24, 178, 224)'></i>
+                </div>
+                <div class="feature-box-info">
+                    <h4 class="font-weight-bold mb-2">24/7 Support</h4>
+                    <p class="mb-4">Our support team is available to you on a 24/7 basis through email, messaging or live chat.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 appear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="300">
+            <div class="feature-box feature-box-style-2">
+                <div class="feature-box-icon">
+                    <i class='fas fa-user-lock' style='font-size:36px;color:rgb(24, 178, 224)'></i>
+                </div>
+                <div class="feature-box-info">
+                    <h4 class="font-weight-bold mb-2">Total Privacy</h4>
+                    <p class="mb-4"> We ensure  that your identity will forever remain private.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<section class="section section-height-3 bg-color-grey-scale-1 border-0 m-0 appear-animation" data-appear-animation="fadeIn">
+<div class="container">
+    <div class="row py-5 my-5">
+        <div class="col-md-6 order-2 order-md-1 text-center text-md-left appear-animation mt-2 pt-1 animated fadeInRightShorter appear-animation-visible" data-appear-animation="fadeInRightShorter" style="animation-delay: 100ms;">
+            <div class="owl-carousel owl-theme nav-style-1 mb-0 owl-loaded owl-drag owl-carousel-init" data-plugin-options="{'responsive': {'576': {'items': 1}, '768': {'items': 1}, '992': {'items': 2}, '1200': {'items': 2}}, 'margin': 25, 'loop': true, 'nav': false, 'dots': false, 'autoplay': true, 'autoplayTimeout': 3000}" style="height: auto;">
+               
+            <div class="owl-stage-outer"><div class="owl-stage" style="transform: translate3d(-1412px, 0px, 0px); transition: all 0.25s ease 0s; width: 3108px;"><div class="owl-item cloned" style="width: 257.5px; margin-right: 25px;"><div>
+                    <img class="img-fluid rounded-0 mb-4" src="{% static  'img/team/team-3.jpg'%}" alt="">
+                    <h3 class="font-weight-bold text-color-dark text-4 mb-0">Christopher Elon</h3>
+                    <p class="text-2 mb-0">TUTOR</p>
+                </div></div><div class="owl-item cloned" style="width: 257.5px; margin-right: 25px;"><div>
+                    <img class="img-fluid rounded-0 mb-4" src="{% static  'img/team/team-4.jpg'%}" alt="">
+                    <h3 class="font-weight-bold text-color-dark text-4 mb-0">Amanda Ray</h3>
+                    <p class="text-2 mb-0">TUTOR</p>
+                </div></div><div class="owl-item cloned" style="width: 257.5px; margin-right: 25px;"><div>
+                    <img class="img-fluid rounded-0 mb-4" src="{% static  'img/team/team-5.jpg'%}" alt="">
+                    <h3 class="font-weight-bold text-color-dark text-4 mb-0">Anthony Wales</h3>
+                    <p class="text-2 mb-0">TUTOR</p>
+                </div></div><div class="owl-item" style="width: 257.5px; margin-right: 25px;"><div>
+                    <img class="img-fluid rounded-0 mb-4" src="{% static  'img/team/team-1.jpg'%}" alt="">
+                    <h3 class="font-weight-bold text-color-dark text-4 mb-0">Gary Andelson</h3>
+                    <p class="text-2 mb-0">TUTOR</p>
+                </div></div><div class="owl-item" style="width: 257.5px; margin-right: 25px;"><div>
+                    <img class="img-fluid rounded-0 mb-4" src="{% static  'img/team/team-2.jpg'%}" alt="">
+                    <h3 class="font-weight-bold text-color-dark text-4 mb-0">Katherine Page</h3>
+                    <p class="text-2 mb-0">TUTOR</p>
+                </div></div><div class="owl-item active" style="width: 257.5px; margin-right: 25px;"><div>
+                    <img class="img-fluid rounded-0 mb-4" src="{% static  'img/team/team-4.jpg'%}" alt="">
+                    <h3 class="font-weight-bold text-color-dark text-4 mb-0">Gloria Stewart</h3>
+                    <p class="text-2 mb-0">TUTOR</p>
+                </div></div></div></div><div class="owl-nav disabled"><button type="button" role="presentation" class="owl-prev"></button><button type="button" role="presentation" class="owl-next"></button></div><div class="owl-dots disabled"></div></div>
+        </div>
+        <div class="col-md-6 order-1 order-md-2 text-center text-md-left mb-5 mb-md-0 appear-animation animated fadeInRightShorter appear-animation-visible" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="200" style="animation-delay: 200ms;">
+            <h2 class="text-color-dark font-weight-normal text-6 mb-2">Meet <strong class="font-weight-extra-bold">Our Team</strong></h2>
+            <p class="lead">Essaycomptutors  key players</p>
+            <p class="mb-4">Meet members of our dedicated team who strive to ensure that all your writing needs are not only met but also done on time.</p>
+            <a href="{% url 'order' %" class="btn btn-dark font-weight-semibold rounded-0 px-5 btn-py-2 text-2 p-relative bottom-3">GET HELP NOW</a>
+        </div>
+    </div>
+</div>
+</section>
+
+{% endblock%} 

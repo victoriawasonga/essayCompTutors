@@ -1,0 +1,143 @@
+{% extends 'base.html' %}
+{% block body %}
+{%load static%}
+<section class="page-header page-header-modern bg-color-quaternary page-header-md">
+    <div class="container">
+        <div class="row">
+
+
+            <div class="col-md-8 order-2 order-md-1 align-self-center p-static">
+                <h1 class="">Conctact Us <strong></strong></h1>
+
+            </div>
+
+
+            <div class="col-md-4 order-1 order-md-2 align-self-center">
+                <ul class="breadcrumb d-block text-md-right breadcrumb-light">
+                    <li><a href="#"></a></li>
+                    <li class="active"></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="container">
+
+    <div class="row py-4">
+        <div class="col-lg-7 appear-animation" data-appear-animation="fadeIn" data-appear-animation-delay="650">
+
+            <div class="offset-anchor" id="contact-sent"></div>
+
+
+            <form id="contactFormAdvanced" action="" method="POST" enctype="multipart/form-data">
+                <input type="hidden" value="true" name="emailSent" id="emailSent">
+                <div class="form-row">
+                    <div class="form-group col-md-12">
+                        <label class="required font-weight-bold text-dark text-2">Full Name</label>
+                        <input type="text" value="" data-msg-required="Please enter your name." maxlength="100" class="form-control" name="name" id="name" required>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label class="required font-weight-bold text-dark text-2">Email Address</label>
+                        <input type="email" value="" data-msg-required="Please enter your email address." data-msg-email="Please enter a valid email address." maxlength="100" class="form-control" name="email" id="email" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-12">
+                        <label class="font-weight-bold text-dark text-2">Subject</label>
+                        <select data-msg-required="Please enter the subject." class="form-control" name="subject" id="subject" required>
+                            <option value="">...</option>
+                            <option value="Option 1">Option 1</option>
+                            <option value="Option 2">Option 2</option>
+                            <option value="Option 3">Option 3</option>
+                            <option value="Option 4">Option 4</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-12 mb-4">
+                        <label class="required font-weight-bold text-dark text-2">Message</label>
+                        <textarea maxlength="5000" data-msg-required="Please enter your message." rows="6" class="form-control" name="message" id="message" required></textarea>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-12 mb-0">
+                        <label class="font-weight-bold text-dark text-2">Human Verification</label>
+                    </div>
+                </div>
+                <div class="form-row pt-2">
+                    <div class="form-group col-md-4">
+                        <div class="captcha form-control">
+                            <div class="captcha-image">
+                                <img id="captcha-image" src="php/simple-php-captcha/simple-php-captcha.php/porto/8.0.0/php/simple-php-captcha/simple-php-captcha3132.png?_CAPTCHA&amp;t=0.86105300+1596457464" alt="CAPTCHA code">											</div>
+                            <div class="captcha-refresh">
+                                <a href="#" id="refreshCaptcha"><i class="fas fa-sync"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-8">
+                        <input type="text" value="" maxlength="6" data-msg-captcha="Wrong verification code." data-msg-required="Please enter the verification code." placeholder="Type the verification code." class="form-control form-control-lg captcha-input" name="captcha" id="captcha" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-12">
+                        <hr>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-12 mb-5">
+                        <input type="submit" id="contactFormSubmit" value="Send Message" class="btn btn-primary btn-modern pull-right" data-loading-text="Loading...">
+                    </div>
+                    <center>
+                        <h2>{{message_name}}</h2>
+            
+                    </center>
+                </div>
+            </form>
+
+        </div>
+        <div class="col-lg-5">
+
+           
+            <div class="appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="800">
+                <h4 class="text-primary pt-5">Get <strong>Intouh</strong></h4>
+                <ul class="list list-icons list-icons-style-3 mt-2">
+                    <li><i class="fas fa-envelope top-6"></i> <strong>Email:</strong> <a href="mailto:mail@example.com">mail@example.com</a></li>
+                    <li><i class="fas fa-envelope top-6"></i> <strong>Email:</strong> <a href="mailto:mail@example.com">mail@example.com</a></li>
+                    <li><i class="fas fa-phone top-6"></i> <strong>WhatsApp:</strong> (123) 456-789</li>
+                </ul>
+
+                <div class="row lightbox mt-4 mb-0 pb-0" data-plugin-options="{'delegate': 'a', 'type': 'image', 'gallery': {'enabled': true}}">
+                    <div class="col-md-4 mb-4 mb-md-0">
+                        <a class="img-thumbnail p-0 border-0 d-block" href="{% static  'img/office/our-office-1.jpg'%}" data-plugin-options="{'type':'image'}">
+                            <img class="img-fluid" src="{% static  'img/office/our-office-1.jpg'%}" alt="Office">
+                        </a>
+                    </div>
+                    <div class="col-md-4 mb-4 mb-md-0">
+                        <a class="img-thumbnail p-0 border-0 d-block" href="img/office/our-office-2.jpg'%}" data-plugin-options="{'type':'image'}">
+                            <img class="img-fluid" src="{% static  'img/office/our-office-2.jpg'%}" alt="Office">
+                        </a>
+                    </div>
+                    <div class="col-md-4">
+                        <a class="img-thumbnail p-0 border-0 d-block" href="img/office/our-office-3.jpg'%}" data-plugin-options="{'type':'image'}">
+                            <img class="img-fluid" src="{% static  'img/office/our-office-3.jpg'%}" alt="Office">
+                        </a>
+                    </div>
+                </div>
+
+                <h4 class="text-primary pt-5">Business <strong>Hours</strong></h4>
+                <ul class="list list-icons list-dark mt-2">
+                    <li><i class="far fa-clock top-6"></i> Monday - Friday - 24 Hours</li>
+                    <li><i class="far fa-clock top-6"></i> Saturday - 24 Hours </li>
+                    <li><i class="far fa-clock top-6"></i> Sunday - 24 Hours</li>
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+{% endblock%}
