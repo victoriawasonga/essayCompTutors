@@ -11,7 +11,10 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
-
+from django.contrib.messages import constants as messages
+MESSAGE_TAGS = {
+    messages.ERROR: 'danger',
+}
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -39,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'essayCompTutors',
     'essaycomp',
+    'authentication',
 ]
 
 MIDDLEWARE = [
@@ -124,6 +128,15 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS=[os.path.join(BASE_DIR,'essayCompTutors/static')]
 STATIC_ROOT=os.path.join(BASE_DIR,'static')
+
+####email settings 
+#EMAIL_HOST=os.environ.get('EMAIL_HOST')
+#EMAIL_PORT=os.environ.get('EMAIL_PORT')
+#EMAIL_HOST_USER=os.environ.get('EMAIL_HOST_USER')
+#EMAIL_HOST_PASSWORD=os.environ.get('EMAIL_HOST_PASSWORD')
+#DEFAULT_FROM_EMAIL=os.environ.get('DEFAULT_FROM_EMAIL')
+#EMAIL_USE_TSL=os.environ.get('EMAIL_USE_TSL')
+#EMAIL_USE_SSL=os.environ.get('EMAIL_USE_SSL')
 #email settings 
 EMAIL_HOST='mail.essaycomptutors.com'
 EMAIL_PORT=465
@@ -132,3 +145,10 @@ EMAIL_HOST_PASSWORD='essay@2020'
 DEFAULT_FROM_RMAIL='info@essaycomptutors.com'
 EMAIL_USE_TSL=False
 EMAIL_USE_SSL=True
+
+#CHANGE ERROR TO DANGER 
+MESSAGE_TAGS = {
+    messages.ERROR: 'danger',
+}
+
+AUTH_USER_MODEL = 'authentication.CustomUser' # new

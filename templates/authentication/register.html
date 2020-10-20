@@ -1,0 +1,118 @@
+{% extends 'base.html'%}
+{% load static %}
+
+
+
+{% block body%}
+
+<section class="page-header page-header-modern bg-color-quaternary page-header-md">
+    <div class="container">
+        <div class="row">
+
+
+            <div class="col-md-8 order-2 order-md-1 align-self-center p-static">
+                <h1 class="">Register <strong></strong></h1>
+
+            </div>
+
+
+            <div class="col-md-4 order-1 order-md-2 align-self-center">
+                <ul class="breadcrumb d-block text-md-right breadcrumb-light">
+                    <li><a href="#"></a></li>
+                    <li class="active"></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+
+        <div class="row">
+            <div class="col-md-2">
+
+
+            </div>
+            <div class="col-md-10">
+                <div class="featured-box featured-box-primary text-left mt-5">
+                    <div class="box-content">
+                        <h4 class="color-primary font-weight-semibold text-4 text-uppercase mb-3">Signup</h4>
+               
+
+                            {% include 'partials/_messages.html'%}
+
+
+
+
+
+ <form action="" method="post">
+
+                                {% csrf_token %}
+<div class="form-row">
+<div class="form-group col-lg-6">
+    <label class="font-weight-bold text-dark text-2">Email</label>
+    <input class="form-control form-control-lg" type="email" name="email" value="{{data.email}}" placeholder="">
+
+
+</div>
+
+<div class="form-group col-lg-6" style="padding-top: 0rem;">
+    <label class="font-weight-bold text-dark text-2">Username</label>
+        <input class="form-control form-control-lg" type="text" name="username" value="{{data.username}}" placeholder="">
+    
+
+    </div>
+</div>
+<div class="form-group">
+    <label class="font-weight-bold text-dark text-2">Full Name</label>
+        <input class="form-control form-control-lg" type="text" name="name" value="{{data.name}}" placeholder="">
+
+
+
+    </div>
+    <div class="form-row">
+        <div class="form-group col-lg-6">
+    <label class="font-weight-bold text-dark text-2">Password</label>
+        <input class="form-control form-control-lg" type="password" name="password" value="" placeholder="">
+
+
+    </div>
+
+    <div class="form-group col-lg-6" style="padding-top: 0rem;">
+        <label class="font-weight-bold text-dark text-2">Confirm Password</label>
+            <input class="form-control form-control-lg" type="password" name="password2" value="" placeholder="">
+
+
+        </div>
+        </div>
+
+        <div class="form-group">
+        <input type="submit" value="Register" class="btn btn-sm btn-block btn-primary"/>
+        <div class="form-group">
+
+
+                            </form>
+
+
+                            <small class="py-3">
+                                    By signing up, you agree to our Terms , Data Policy and Cookies Policy .
+                            </small>
+                            <div class="">
+                                <span class="psw">Dont have an account?<a href="{% url 'login' %}"> Login</a> or <a href="{% url 'request_reset_link' %}">Reset Password</a> </span>
+                             
+                            </div>
+                            
+
+                            </div>
+                    </div>
+
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+    </div>
+    <div class="col-md-3"></div>
+</div>
+</div>
+</div>
+{% endblock %}
