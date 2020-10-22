@@ -37,15 +37,16 @@
                     <input type="file" id="file" class="profile-image-input">
                 </div>-->
             </div>
-
             <aside class="sidebar mt-2" id="sidebar">
                 <ul class="nav nav-list flex-column mb-5">
                     <li class="nav-item"><a class="nav-link text-dark active" href="{% url 'change_password' %}">Change Password</a></li>
                     <li class="nav-item"><a class="nav-link " href="{% url 'profile' %}">My Profile</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Billing</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Invoices</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'view_orders' %}">Order</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'view_payments' %}">View Progress</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">Logout</a></li>
                 </ul>
             </aside>
+
 
         </div>
         <div class="col-lg-9">

@@ -71,7 +71,7 @@ class RegistrationView(View):
             email = EmailMessage(
                 email_subject,
                 email_body,
-                'noreply@essaycomptutors.com',
+                'victoriawasonga@gmail.com',
                 [email],
             )
             email.send(fail_silently=False)
@@ -128,12 +128,10 @@ class LoginView(View):
             request, 'Please fill all fields')
         return render(request, 'authentication/login.html')
 
-
-class LogoutView(View):
-    def post(self, request):
-        auth.logout(request)
-        messages.success(request, 'You have been logged out')
-        return redirect('login')
+def logout(request):
+    auth.logout(request)
+    messages.success(request, 'You have been logged out')
+    return redirect('login')
 
 
 @login_required(login_url='/authentication/login')

@@ -1,0 +1,232 @@
+{% extends 'base.html' %}
+{% block body %}
+{%load static%}
+<section class="page-header page-header-modern bg-color-quaternary page-header-md">
+    <div class="container">
+        <div class="row">
+
+
+            <div class="col-md-8 order-2 order-md-1 align-self-center p-static">
+                <h1 class="">Profile <strong></strong></h1>
+
+            </div>
+
+
+            <div class="col-md-4 order-1 order-md-2 align-self-center">
+                <ul class="breadcrumb d-block text-md-right breadcrumb-light">
+                    <li><a href="#"></a></li>
+                    <li class="active"></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="container py-2">
+
+    <div class="row">
+        <div class="col-lg-3 mt-4 mt-lg-0">
+
+            <div class="d-flex justify-content-center mb-4">
+               <!-- <div class="profile-image-outer-container">
+                    <div class="profile-image-inner-container bg-color-primary">
+                        <img src="img/avatars/avatar.jpg">
+                        <span class="profile-image-button bg-color-dark">
+                            <i class="fas fa-camera text-light"></i>
+                        </span>
+                    </div>
+                    <input type="file" id="file" class="profile-image-input">
+                </div>-->
+            </div>
+
+            <aside class="sidebar mt-2" id="sidebar">
+                <ul class="nav nav-list flex-column mb-5">
+                    <li class="nav-item"><a class="nav-link text-dark active" href="{% url 'change_password' %}">Change Password</a></li>
+                    <li class="nav-item"><a class="nav-link " href="{% url 'profile' %}">My Profile</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'view_orders' %}">Order</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'view_payments' %}">>View Progress</a></li>
+                </ul>
+            </aside>
+
+
+        </div>
+        <div class="col-lg-9">
+
+            <div class="overflow-hidden mb-1">
+                <h2 class="font-weight-normal text-7 mb-0"><strong class="font-weight-extra-bold">My</strong> Profile</h2>
+            </div>
+            <div class="overflow-hidden mb-4 pb-3">
+                <p class="mb-0">To edit your profile change the details below.</p>
+            </div>
+
+            <div id="datatable-editable_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer"><div class="row"><div class="col-lg-6"><div class="dataTables_length" id="datatable-editable_length"><label><select name="datatable-editable_length" aria-controls="datatable-editable" class="custom-select custom-select-sm form-control form-control-sm select2-hidden-accessible" data-select2-id="1" tabindex="-1" aria-hidden="true"><option value="10" data-select2-id="3">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select><span class="select2 select2-container select2-container--bootstrap" dir="ltr" data-select2-id="2" style="width: 55px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-disabled="false" aria-labelledby="select2-datatable-editable_length-9w-container"><span class="select2-selection__rendered" id="select2-datatable-editable_length-9w-container" role="textbox" aria-readonly="true" title="10">10</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span> records per page</label></div></div><div class="col-lg-6"><div id="datatable-editable_filter" class="dataTables_filter"><label><input type="search" class="form-control pull-right" placeholder="Search..." aria-controls="datatable-editable"></label></div></div></div><div class="table-responsive"><table class="table table-bordered table-striped mb-0 dataTable no-footer" id="datatable-editable" role="grid">
+                <thead>
+                    <tr role="row"><th class="sorting_asc" tabindex="0" aria-controls="datatable-editable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 223px;">Rendering engine</th><th class="sorting" tabindex="0" aria-controls="datatable-editable" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending" style="width: 302px;">Browser</th><th class="sorting" tabindex="0" aria-controls="datatable-editable" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending" style="width: 275px;">Platform(s)</th><th class="sorting_disabled" rowspan="1" colspan="1" aria-label="Actions" style="width: 109px;">Actions</th></tr>
+                </thead>
+                <tbody>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                <tr data-item-id="7" role="row" class="odd">
+                        <td class="sorting_1">Gecko</td>
+                        <td>Firefox 1.0</td>
+                        <td>Win 98+ / OSX.2+</td>
+                        <td class="actions">
+                            <a href="#" class="hidden on-editing save-row"><i class="fas fa-save"></i></a>
+                            <a href="#" class="hidden on-editing cancel-row"><i class="fas fa-times"></i></a>
+                            <a href="#" class="on-default edit-row"><i class="fas fa-pencil-alt"></i></a>
+                            <a href="#" class="on-default remove-row"><i class="far fa-trash-alt"></i></a>
+                        </td>
+                    </tr><tr data-item-id="8" role="row" class="even">
+                        <td class="sorting_1">Gecko</td>
+                        <td>Firefox 1.5</td>
+                        <td>Win 98+ / OSX.2+</td>
+                        <td class="actions">
+                            <a href="#" class="hidden on-editing save-row"><i class="fas fa-save"></i></a>
+                            <a href="#" class="hidden on-editing cancel-row"><i class="fas fa-times"></i></a>
+                            <a href="#" class="on-default edit-row"><i class="fas fa-pencil-alt"></i></a>
+                            <a href="#" class="on-default remove-row"><i class="far fa-trash-alt"></i></a>
+                        </td>
+                    </tr><tr data-item-id="9" role="row" class="odd">
+                        <td class="sorting_1">Gecko</td>
+                        <td>Firefox 2.0</td>
+                        <td>Win 98+ / OSX.2+</td>
+                        <td class="actions">
+                            <a href="#" class="hidden on-editing save-row"><i class="fas fa-save"></i></a>
+                            <a href="#" class="hidden on-editing cancel-row"><i class="fas fa-times"></i></a>
+                            <a href="#" class="on-default edit-row"><i class="fas fa-pencil-alt"></i></a>
+                            <a href="#" class="on-default remove-row"><i class="far fa-trash-alt"></i></a>
+                        </td>
+                    </tr><tr data-item-id="10" role="row" class="even">
+                        <td class="sorting_1">Gecko</td>
+                        <td>Firefox 3.0</td>
+                        <td>Win 2k+ / OSX.3+</td>
+                        <td class="actions">
+                            <a href="#" class="hidden on-editing save-row"><i class="fas fa-save"></i></a>
+                            <a href="#" class="hidden on-editing cancel-row"><i class="fas fa-times"></i></a>
+                            <a href="#" class="on-default edit-row"><i class="fas fa-pencil-alt"></i></a>
+                            <a href="#" class="on-default remove-row"><i class="far fa-trash-alt"></i></a>
+                        </td>
+                    </tr><tr data-item-id="11" role="row" class="odd">
+                        <td class="sorting_1">Gecko</td>
+                        <td>Camino 1.0</td>
+                        <td>OSX.2+</td>
+                        <td class="actions">
+                            <a href="#" class="hidden on-editing save-row"><i class="fas fa-save"></i></a>
+                            <a href="#" class="hidden on-editing cancel-row"><i class="fas fa-times"></i></a>
+                            <a href="#" class="on-default edit-row"><i class="fas fa-pencil-alt"></i></a>
+                            <a href="#" class="on-default remove-row"><i class="far fa-trash-alt"></i></a>
+                        </td>
+                    </tr><tr data-item-id="12" role="row" class="even">
+                        <td class="sorting_1">Gecko</td>
+                        <td>Camino 1.5</td>
+                        <td>OSX.3+</td>
+                        <td class="actions">
+                            <a href="#" class="hidden on-editing save-row"><i class="fas fa-save"></i></a>
+                            <a href="#" class="hidden on-editing cancel-row"><i class="fas fa-times"></i></a>
+                            <a href="#" class="on-default edit-row"><i class="fas fa-pencil-alt"></i></a>
+                            <a href="#" class="on-default remove-row"><i class="far fa-trash-alt"></i></a>
+                        </td>
+                    </tr><tr data-item-id="13" role="row" class="odd">
+                        <td class="sorting_1">Gecko</td>
+                        <td>Netscape 7.2</td>
+                        <td>Win 95+ / Mac OS 8.6-9.2</td>
+                        <td class="actions">
+                            <a href="#" class="hidden on-editing save-row"><i class="fas fa-save"></i></a>
+                            <a href="#" class="hidden on-editing cancel-row"><i class="fas fa-times"></i></a>
+                            <a href="#" class="on-default edit-row"><i class="fas fa-pencil-alt"></i></a>
+                            <a href="#" class="on-default remove-row"><i class="far fa-trash-alt"></i></a>
+                        </td>
+                    </tr><tr data-item-id="14" role="row" class="even">
+                        <td class="sorting_1">Gecko</td>
+                        <td>Netscape Browser 8</td>
+                        <td>Win 98SE+</td>
+                        <td class="actions">
+                            <a href="#" class="hidden on-editing save-row"><i class="fas fa-save"></i></a>
+                            <a href="#" class="hidden on-editing cancel-row"><i class="fas fa-times"></i></a>
+                            <a href="#" class="on-default edit-row"><i class="fas fa-pencil-alt"></i></a>
+                            <a href="#" class="on-default remove-row"><i class="far fa-trash-alt"></i></a>
+                        </td>
+                    </tr><tr data-item-id="15" role="row" class="odd">
+                        <td class="sorting_1">Gecko</td>
+                        <td>Netscape Navigator 9</td>
+                        <td>Win 98+ / OSX.2+</td>
+                        <td class="actions">
+                            <a href="#" class="hidden on-editing save-row"><i class="fas fa-save"></i></a>
+                            <a href="#" class="hidden on-editing cancel-row"><i class="fas fa-times"></i></a>
+                            <a href="#" class="on-default edit-row"><i class="fas fa-pencil-alt"></i></a>
+                            <a href="#" class="on-default remove-row"><i class="far fa-trash-alt"></i></a>
+                        </td>
+                    </tr><tr data-item-id="16" role="row" class="even">
+                        <td class="sorting_1">Gecko</td>
+                        <td>Mozilla 1.0</td>
+                        <td>Win 95+ / OSX.1+</td>
+                        <td class="actions">
+                            <a href="#" class="hidden on-editing save-row"><i class="fas fa-save"></i></a>
+                            <a href="#" class="hidden on-editing cancel-row"><i class="fas fa-times"></i></a>
+                            <a href="#" class="on-default edit-row"><i class="fas fa-pencil-alt"></i></a>
+                            <a href="#" class="on-default remove-row"><i class="far fa-trash-alt"></i></a>
+                        </td>
+                    </tr></tbody>
+            </table></div><div class="dataTables_paginate paging_simple_numbers" id="datatable-editable_paginate"><ul class="pagination"><li class="paginate_button page-item previous disabled" id="datatable-editable_previous"><a href="#" aria-controls="datatable-editable" data-dt-idx="0" tabindex="0" class="page-link">Previous</a></li><li class="paginate_button page-item active"><a href="#" aria-controls="datatable-editable" data-dt-idx="1" tabindex="0" class="page-link">1</a></li><li class="paginate_button page-item "><a href="#" aria-controls="datatable-editable" data-dt-idx="2" tabindex="0" class="page-link">2</a></li><li class="paginate_button page-item "><a href="#" aria-controls="datatable-editable" data-dt-idx="3" tabindex="0" class="page-link">3</a></li><li class="paginate_button page-item "><a href="#" aria-controls="datatable-editable" data-dt-idx="4" tabindex="0" class="page-link">4</a></li><li class="paginate_button page-item "><a href="#" aria-controls="datatable-editable" data-dt-idx="5" tabindex="0" class="page-link">5</a></li><li class="paginate_button page-item "><a href="#" aria-controls="datatable-editable" data-dt-idx="6" tabindex="0" class="page-link">6</a></li><li class="paginate_button page-item next" id="datatable-editable_next"><a href="#" aria-controls="datatable-editable" data-dt-idx="7" tabindex="0" class="page-link">Next</a></li></ul></div></div>
+        </div>
+    </div>
+
+</div>
+
+
+
+{% endblock%}

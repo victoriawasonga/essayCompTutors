@@ -169,16 +169,16 @@
 														<a class="dropdown-item dropdown-toggle " href="#"><i class="far fa-user"></i>  {{ user.email }} </a>
 														<ul class="dropdown-menu">
 															<li><a class="dropdown-item" href="{% url 'profile' %}">Profile</a></li>
+															<li class="dropdown">
+																	{% csrf_token %}
+																	<a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
+														
+															
+													</li> 
+													</li> 
 														</ul>
 													</li> 
-													<li class="dropdown">
-														<form action="{% url 'logout' %}" method="POST">
-															{% csrf_token %}
-															<input class="dropdown-item dropdown-toggle " style="padding-top: 40px;" type="submit" name="Logout"  value="Logout" id="">
-														
-													</form>
 													
-											</li> 
 													{%else%}
 														<li class="dropdown">
 															<a class="dropdown-item dropdown-toggle " href="{% url 'register' %}">Login/Register </a>

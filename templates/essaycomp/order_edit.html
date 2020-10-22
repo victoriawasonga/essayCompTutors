@@ -1,12 +1,13 @@
 {% extends 'base.html' %}
 {% block body %}
-<section class="page-header page-header-modern bg-color-quaternary page-header-md" style="margin-bottom: 0px; padding:40px;">
+{%load static%}
+<section class="page-header page-header-modern bg-color-quaternary page-header-md">
     <div class="container">
         <div class="row">
 
 
             <div class="col-md-8 order-2 order-md-1 align-self-center p-static">
-                <h1 class="">Order <strong></strong></h1>
+                <h1 class="">Order <strong>Edit</strong></h1>
 
             </div>
 
@@ -20,216 +21,168 @@
         </div>
     </div>
 </section>
+<div class="container py-2">
 
-<div class="container">
     <div class="row">
-        <div class="col">
-            <section class="card card-admin form-wizard" id="w4">
-                <form class="form-horizontal p-3" novalidate="novalidate" method="post" action="">
-          
-                <div class="card-body">
-                    <div class="wizard-progress wizard-progress-lg">
-                        <div class="steps-progress">
-                            <div class="progress-indicator"></div>
-                        </div>
-                        <ul class="nav wizard-steps">
-                            <li class="nav-item active">
-                                <a class="nav-link" href="#w4-account" data-toggle="tab"><span>1</span>Paper Info</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#w4-profile" data-toggle="tab"><span>2</span>Price Calculations</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#w4-profiles" data-toggle="tab"><span>2</span>Personal Details</a>
-                            </li>
-                           
-                        </ul>
+        <div class="col-lg-3 mt-4 mt-lg-0">
+
+            <div class="d-flex justify-content-center mb-4">
+               <!-- <div class="profile-image-outer-container">
+                    <div class="profile-image-inner-container bg-color-primary">
+                        <img src="img/avatars/avatar.jpg">
+                        <span class="profile-image-button bg-color-dark">
+                            <i class="fas fa-camera text-light"></i>
+                        </span>
                     </div>
-                    
+                    <input type="file" id="file" class="profile-image-input">
+                </div>-->
+            </div>
+            <aside class="sidebar mt-2" id="sidebar">
+                <ul class="nav nav-list flex-column mb-5">
+                    <li class="nav-item"><a class="nav-link text-dark active" href="{% url 'change_password' %}">Change Password</a></li>
+                    <li class="nav-item"><a class="nav-link " href="{% url 'profile' %}">My Profile</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'view_orders' %}">Order</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'view_payments' %}">View Progress</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">Logout</a></li>
+                </ul>
+            </aside>
 
-                    
-                        {% csrf_token %}
-                        {%include 'partials/_messages.html'%}
-                        <div class="form-group row">
-                            <label class="col-sm-3 control-label text-sm-right pt-1" for="w4-username">Price in $</label>
-                            <div class="col-sm-5">
-                                <div class="alert alert-danger">
-                                    <input type=" text" 
-                                    name="price" id="tot_amount" value="" 
-                                    readonly style="color: #721c24; background-color: #f8d7da;border-color: #f5c6cb; border: none" />
-                                <!--<output id="tot_amount"><h1 style="margin-bottom: 2px;"></h1></output>-->
-                                </div>
-                            </div>
-                        </div>  
 
-                  
-                        <div class="tab-content">
-                            <div id="w4-account" class="tab-pane active">
-                                <div class="form-group row">
-                                    <label class="col-sm-3 control-label text-sm-right pt-1" for="w4-username">Academic Level</label>
-                                    <div class="col-sm-3">
-                                        <select class="form-control" name="academic_level"  onchange="calculateAmount()"id="level" required>
-                                            <option value="">select</option>
-                                            <option value="highschool">High School</option>
-                                            <option value="undergraduate">Undergraduate</option>
-                                            <option value="masters">Masters</option>
-                                            <option value="doctrate">Doctrate</option>
-                                        </select>
-                                    </div>
-                                    <label class="col-sm-3 control-label text-sm-right pt-1" for="w4-last-name">Type of Paper</label>
-                                    <div class="col-sm-3">
-                                        <select class="form-control" name="type_of_paper" onchange="calculateAmount()"id="type" required>
-                                            <option value="">Select</option>
-                                            <option value="custom_essay">Custom Essay</option>
-                                            <option value="research_paper">Research Paper</option>
-                                            <option value="presentation">Presentation</option>
-                                            <option value="thesis">Thesis</option>
-                                            <option value="dissertation">dissertation</option>
-                         
-                                        </select>
-                                    </div>   
-
-                                </div> 
-                                <div class="form-group row">
-                                    <label class="col-sm-3 control-label text-sm-right pt-1" for="w4-username">Topic</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" class="form-control" name="topic" id="w4-username" required>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-sm-3 control-label text-sm-right pt-1" for="w4-username">Paper Instrucions</label>
-                                    <div class="col-sm-9">
-                                        <textarea class="form-control" rows="3" data-plugin-maxlength="" maxlength="140" spellcheck="false" name="instructions"></textarea>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-sm-3 control-label text-sm-right pt-1" for="w4-username">Attachements</label>
-                                    <div class="col-lg-6">
-                                        <input type="file" name="attachements" id="fileToUpload">
-                                    </div>
-                                </div>
-                            </div>
-                            <div id="w4-profile" class="tab-pane">
-                                
-                                <div class="form-group row">
-                                    <label class="col-sm-3 control-label text-sm-right pt-1" for="w4-username">Referencing Style</label>
-                                    <div class="col-sm-3">
-                                        <select class="form-control" name="reference" onchange="calculateAmount()"id="style" required>
-                                            <option value="">Select</option>
-                                            <option value="apa">APA</option>
-                                            <option value="mla">MLA</option>
-                                            <option value="chicago">Turbian / Chicago</option>
-                                            <option value="others">Others</option>
-
-                                        </select>
-                                    </div>
-                                    <label class="col-sm-3 control-label text-sm-right pt-1" for="w4-last-name">Deadline</label>
-                                    <div class="col-sm-3">
-                                        <select class="form-control" name="deadline" onchange="calculateAmount()"id="deadline" required>
-                                            <option value="">Select</option>
-                                            <option value="1wk">1 WEEK</option>
-                                            <option value="3days">3 DAYS</option>
-                                            <option value="1day">1 DAY</option>
-                                            <option value="24h">24 HOURS</option>
-                                            <option value="12h">12 HOURS</option>
-                         
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                        <label class="col-sm-3 control-label text-sm-right pt-1" for="w4-username">SOURCES</label>
-                                        <div class="col-lg-5">
-                                            <div data-plugin-spinner="" data-plugin-options="{ &quot;value&quot;:0, &quot;step&quot;: 1, &quot;min&quot;: 0, &quot;max&quot;: 200 }">
-                                                <div class="input-group">
-                                                    <div class="input-group-prepend">
-                                                        <button type="button" class="btn btn-default spinner-up">
-                                                            <i class="fas fa-plus"></i>
-                                                        </button>
-                                                    </div>
-                                                    <input type="text" class="spinner-input form-control" maxlength="3" readonly="" name="sources">
-                                                    <div class="input-group-append">
-                                                        <button type="button" class="btn btn-default spinner-down">
-                                                            <i class="fas fa-minus"></i>
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                <div class="form-group row">
-                                    <label class="col-sm-3 control-label text-sm-right pt-1" for="w4-last-name">Pages</label>
-                                    <div class="col-lg-5">
-                                        <div data-plugin-spinner="" data-plugin-options="{ &quot;value&quot;:0, &quot;step&quot;: 1, &quot;min&quot;: 0, &quot;max&quot;: 200 }">
-                                            <div class="input-group">
-                                                <div class="input-group-prepend">
-                                                    <button type="button" class="btn btn-default spinner-up">
-                                                        <i class="fas fa-plus"></i>
-                                                    </button>
-                                                </div>
-                                                <input type="text" class="spinner-input form-control" maxlength="3" readonly="" name="pages">
-                                                <div class="input-group-append">
-                                                    <button type="button" class="btn btn-default spinner-down">
-                                                        <i class="fas fa-minus"></i>
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-sm-3 control-label text-sm-right pt-1" for="w4-last-name">Spacing</label>
-                                    <div class="col-sm-5">
-                                        <select class="form-control" name="spacing" required name="spacing">
-                                            <option value="">Select </option>
-                                            <option value="single">Single </option>
-                                            <option value="double">double </option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div id="w4-profiles" class="tab-pane">
-                                {% if user.is_authenticated %}                          
-                                    <div class="col-sm-9">
-                                        <div class="checkbox-custom">
-                                            <input type="checkbox" name="terms" id="w4-terms" required>
-                                            <label for="w4-terms">I agree to the terms of service</label>
-                                        </div>
-                                    </div>
-                                    <label class="col-sm-3 control-label text-sm-right pt-1" for="w4-last-name"></label>
-                                    <div class="col-sm-5">
-                                        <input type="submit" name="submit" class="btn btn-primary btn-lg btn-block" float-right style="border: none; background-color: none;" value="Submit"/>
-                                    </div>
-                           
-                                    
-                                
-                                {%else%}
-                                <div class="alert alert-warning"> You will be required to <a href=""><strong>login</strong></a> or <a href=""><strong>register</strong></a> before you can proceed</div>
-                                {%endif%}
-                            </div>
-                    
-                        </div>
-                       
-                   
-                </div>
-                <div class="card-footer">
-                    <ul class="pager">
-                        <li class="previous disabled">
-                            <a><i class="fas fa-angle-left"></i> Previous</a>
-                        </li>
-                        <li class="finish hidden float-right">
-                            
-                        </li>
-                        <li class="next">
-                            <a>Next <i class="fas fa-angle-right"></i></a>
-                        </li>
-                    </ul>
-                </div>
-            </form>
-            </section>
         </div>
-    </div>
+        <div class="col-lg-9">
+       
+
+          
+
+            <form role="form" class="needs-validation"  action="{%url 'order_edit' order.id%}" method="post">
+                {% csrf_token %}
+                {% include 'partials/_messages.html'%}
+
+            <div class="form-group row">
+                <label class="col-lg-3 font-weight-bold text-dark col-form-label form-control-label text-2">Amount</label>
+                <div class="col-lg-9">
+                    <input type=" text" 
+                                    name="price" id="tot_amount" value="{{ order.price}} " 
+                                    readonly style="color: #721c24; background-color: #f8d7da;border-color: #f5c6cb; border: none" class="form-control" />
+
+                </div>
+            </div>
+                <div class="form-group row">
+                    <label class="col-lg-3 font-weight-bold text-dark col-form-label form-control-label text-2 ">Academic Level</label>
+                    <div class="col-lg-9">
+                        <select class="form-control" name="academic_level"  onchange="calculateAmount()"id="level" >
+                            <option value="{{order.academic_level}}" selected>{{order.academic_level}}</option>
+                            <option value="">select</option>
+                            <option value="highschool">High School</option>
+                            <option value="undergraduate">Undergraduate</option>
+                            <option value="masters">Masters</option>
+                            <option value="doctrate">Doctrate</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-lg-3 font-weight-bold text-dark col-form-label form-control-label text-2 ">Type of Paper</label>
+                    <div class="col-lg-9">
+                        <select class="form-control" name="type_of_paper" onchange="calculateAmount()"id="type" >
+                            <option value="{{ order.type_of_paper}} " selected>{{ order.type_of_paper}} </option>
+                            <option value="custom_essay">Custom Essay</option>
+                            <option value="research_paper">Research Paper</option>
+                            <option value="presentation">Presentation</option>
+                            <option value="thesis">Thesis</option>
+                            <option value="dissertation">dissertation</option>
+         
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-lg-3 font-weight-bold text-dark col-form-label form-control-label text-2 ">Topic</label>
+                    <div class="col-lg-9">
+                        <input class="form-control" ="" name="topic" type="text" value="{{ order.topic}} " >
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-lg-3 font-weight-bold text-dark col-form-label form-control-label text-2">Deadline</label>
+                    <div class="col-lg-9">
+                        <select class="form-control" name="deadline" onchange="calculateAmount()"id="deadline" >
+                            <option value="{{ order.deadline}} " selected>{{ order.deadline}} </option>
+                            <option value="1wk">1 WEEK</option>
+                            <option value="3days">3 DAYS</option>
+                            <option value="1day">1 DAY</option>
+                            <option value="24h">24 HOURS</option>
+                            <option value="12h">12 HOURS</option>
+         
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-lg-3 font-weight-bold text-dark col-form-label form-control-label text-2">Reference Style</label>
+                    <div class="col-lg-9">
+                        <select class="form-control" name="reference" onchange="calculateAmount()"id="style" >
+                            <option value="{{ order.reference}}">{{ order.reference}}</option>
+                            <option value="apa">APA</option>
+                            <option value="mla">MLA</option>
+                            <option value="chicago">Turbian / Chicago</option>
+                            <option value="others">Others</option>
+
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-lg-3 font-weight-bold text-dark col-form-label form-control-label text-2">Number of Sources</label>
+                    <div class="col-lg-9">
+                        <input class="form-control" type="number" name="sources" value="{{ order.sources}}" >
+                        
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-lg-3 font-weight-bold text-dark col-form-label form-control-label text-2">Number of Pages</label>
+                    <div class="col-lg-9">
+                        <input class="form-control" type="number" name="pages" value="{{ order.pages}}" >
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-lg-3 font-weight-bold text-dark col-form-label form-control-label text-2">Spacing Type</label>
+                    <div class="col-lg-9">
+                        <select class="form-control" name="spacing"  name="spacing">
+                            <option value="{{ order.spacing}}" selected>{{ order.spacing}} </option>
+                            <option value="single">Single </option>
+                            <option value="double">double </option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-lg-3 font-weight-bold text-dark col-form-label form-control-label text-2">Instructions</label>
+                    <div class="col-lg-9">
+                        <textarea class="form-control" rows="3" data-plugin-maxlength="" maxlength="140" spellcheck="false" name="instructions" >{{ order.instructions}}</textarea>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-lg-3 font-weight-bold text-dark col-form-label form-control-label text-2">Attachements</label>
+                    <div class="col-lg-9">
+                        <input type="file" name="attachements" id="fileToUpload" value="{{ order.attachements}} ">
+                    </div>
+                </div>
+                
+                <div class="form-group row">
+                    <div class="form-group col-lg-9">
+                        
+                    </div>
+                    <div class="form-group col-lg-3">
+                        <input type="submit" value="Save" class="btn btn-primary btn-modern float-right" data-loading-text="Loading...">
+                    </div>
+                </div>
+                
+            </form>
+
+        </div>
 </div>
+</div>
+      
+    </div>
+</section>
+
+
 <script>
     function calculateAmount() {
         var level = document.getElementById('level').value;
@@ -641,6 +594,5 @@
     }
       
 </script>
-
 
 {% endblock%}

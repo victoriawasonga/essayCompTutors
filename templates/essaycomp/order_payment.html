@@ -1,0 +1,169 @@
+{% extends 'base.html' %}
+{% block body %}
+{%load static%}
+<section class="page-header page-header-modern bg-color-quaternary page-header-md">
+    <div class="container">
+        <div class="row">
+
+
+            <div class="col-md-8 order-2 order-md-1 align-self-center p-static">
+                <h1 class="">Order <strong>Edit</strong></h1>
+
+            </div>
+
+
+            <div class="col-md-4 order-1 order-md-2 align-self-center">
+                <ul class="breadcrumb d-block text-md-right breadcrumb-light">
+                    <li><a href="#"></a></li>
+                    <li class="active"></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="container py-2">
+
+    <div class="row">
+        <div class="col-lg-3 mt-4 mt-lg-0">
+
+            <div class="d-flex justify-content-center mb-4">
+               <!-- <div class="profile-image-outer-container">
+                    <div class="profile-image-inner-container bg-color-primary">
+                        <img src="img/avatars/avatar.jpg">
+                        <span class="profile-image-button bg-color-dark">
+                            <i class="fas fa-camera text-light"></i>
+                        </span>
+                    </div>
+                    <input type="file" id="file" class="profile-image-input">
+                </div>-->
+            </div>
+
+            <aside class="sidebar mt-2" id="sidebar">
+                <ul class="nav nav-list flex-column mb-5">
+                    <li class="nav-item"><a class="nav-link text-dark active" href="{% url 'change_password' %}">Change Password</a></li>
+                    <li class="nav-item"><a class="nav-link " href="{% url 'profile' %}">My Profile</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'view_orders' %}">Order</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'view_payments' %}">View Progress</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">Logout</a></li>
+                </ul>
+            </aside>
+
+        </div>
+    
+            <div class="col-lg-9">
+                
+                <p>Payment Summary</p>
+
+                <div class="form-group row">
+                    <label class="col-lg-3 font-weight-bold text-dark col-form-label form-control-label text-2 ">Topic</label>
+                    <div class="col-lg-9">
+                <p>{{order.topic}}</p>
+                </div>
+                </div>
+                <div class="form-group row">
+                <label class="col-lg-3 font-weight-bold text-dark col-form-label form-control-label text-2 ">Academic Level</label>
+                    <div class="col-lg-9">
+                <p>{{order.academic_level}}</p>
+                    </div></div>
+                    <div class="form-group row">
+                    <label class="col-lg-3 font-weight-bold text-dark col-form-label form-control-label text-2 ">Type of Paper</label>
+                    <div class="col-lg-9">
+                <p>{{order.type_of_paper}}</p>
+                    </div></div>
+                    <div class="form-group row">
+                    <label class="col-lg-3 font-weight-bold text-dark col-form-label form-control-label text-2 ">Deadline</label>
+                    <div class="col-lg-9">
+                <p>{{order.deadline}}</p>
+                    </div></div>
+                           
+                    <div class="form-group row">
+                        <label class="col-lg-3 font-weight-bold text-dark col-form-label form-control-label text-2">Price</label>
+                        <div class="col-lg-9">
+                            <input type=" text" 
+                                            name="price" id="tot_amount" value="{{ order.price}} " 
+                                            readonly style="color: #721c24; background-color: #f8d7da;border-color: #f5c6cb; border: none" class="form-control" />
+        
+                        </div>
+                    </div>
+
+                <div class="col-lg-9">
+
+            
+       
+
+        
+                    <div id="paypal-button-container"></div>
+            
+                    <script src="https://www.paypal.com/sdk/js?client-id=Afc5NoumPm521sQNjUtKwdg_PBnIf1r32wADPtCUaM62Sx4Bp4uiFrnS4SsTjFFOYS46rpxorYJxyGz0&currency=USD"></script>
+                    <script>
+                        function getCookie(name) {
+                            let cookieValue = null;
+                            if (document.cookie && document.cookie !== '') {
+                                const cookies = document.cookie.split(';');
+                                for (let i = 0; i < cookies.length; i++) {
+                                    const cookie = cookies[i].trim();
+                                    // Does this cookie string begin with the name we want?
+                                    if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                                        break;
+                                    }
+                                }
+                            }
+                            return cookieValue;
+                        }
+                        const csrftoken = getCookie('csrftoken');
+                        var total='{{order.price}}'
+                        var order_id='{{order.id}}'
+            
+                        function completeOrder(){
+                            var url="{%url 'complete' %}"
+                            fetch(url,{
+                                method:'POST',
+                                headers:{
+                                    'Content-type':'application/json',
+                                    'X-CSRFToken':csrftoken,
+                                },
+                                body:JSON.stringify({'order_id':order_id})
+            
+                            })
+                        }
+                        // Render the PayPal button into #paypal-button-container
+                        paypal.Buttons({
+                
+                            // Set up the transaction
+                            createOrder: function(data, actions) {
+                                return actions.order.create({
+                                    purchase_units: [{
+                                        amount: {
+                                            value: total
+                                        }
+                                    }]
+                                });
+                            },
+                
+                            // Finalize the transaction
+                            onApprove: function(data, actions) {
+                                return actions.order.capture().then(function(details) {
+                                    // Show a success message to the buyer
+                                    completeOrder()
+                                    alert('Transaction completed by ' + details.payer.name.given_name + '!');
+                                });
+                            }
+                
+                
+                        }).render('#paypal-button-container');
+                    </script>
+                    </div>
+            </div>
+           
+    
+</div>
+</div>
+      
+    </div>
+</section>
+
+
+
+
+{% endblock%}

@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% block body %}
+{%load static%}
+<section class="page-header page-header-modern bg-color-quaternary page-header-md">
+    <div class="container">
+        <div class="row">
+
+
+            <div class="col-md-8 order-2 order-md-1 align-self-center p-static">
+                <h1 class="">Profile <strong></strong></h1>
+
+            </div>
+
+
+            <div class="col-md-4 order-1 order-md-2 align-self-center">
+                <ul class="breadcrumb d-block text-md-right breadcrumb-light">
+                    <li><a href="#"></a></li>
+                    <li class="active"></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="container py-2">
+
+    <div class="row">
+        <div class="col-lg-3 mt-4 mt-lg-0">
+
+           
+            <aside class="sidebar mt-2" id="sidebar">
+                <ul class="nav nav-list flex-column mb-5">
+                    <li class="nav-item"><a class="nav-link text-dark active" href="{% url 'change_password' %}">Change Password</a></li>
+                    <li class="nav-item"><a class="nav-link " href="{% url 'profile' %}">My Profile</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'view_orders' %}">Order</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'view_payments' %}">View Progress</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">Logout</a></li>
+                </ul>
+            </aside>
+
+
+        </div>
+        <div class="col-lg-9">
+
+            <div class="overflow-hidden mb-1">
+                <h2 class="font-weight-normal text-7 mb-0"><strong class="font-weight-extra-bold">My</strong> Profile</h2>
+            </div>
+            <div class="overflow-hidden mb-4 pb-3">
+                
+                {% include 'partials/_messages.html'%}
+            </div>
+            {%if orders.count%}
+            <table class="table table-stripped table-hover">
+                <thead>
+                    <tr>
+                        <th>Academic Level</th>
+                        <th>Type of Paper</th>
+                        <th>Topic</th>
+                        <th>Deadline</th>
+                        <th>Price</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {%for order in orders%}
+                    <tr>
+                        
+                        <td>{{order.academic_level}}</td>
+                        <td>{{order.type_of_paper}}</td>
+                        <td>{{order.topic}}</td>
+                        <td>{{order.deadline}}</td>
+                        <td>{{order.price}}</td>
+                        <td>
+                            <a href="{%url 'order_details' order.id%}" class="btn btn-success"><i class="far fa-eye"></i> View</a>
+                            <a href="{%url 'order_edit' order.id%}" class="btn btn-primary"><i class="fas fa-pen"></i> Edit</a>
+                            <a href="{%url 'order_payment' order.id%}" class="btn btn-secondary"><i class="fas fa-money-check"></i> Make Payment</a>
+                        </td>
+                        
+                    </tr>
+                    </tr>
+                    {%endfor%}
+                </tbody>
+
+            </table>
+            {%endif%}
+            
+            </div>
+        </div>
+</div>
+
+{% endblock%}
